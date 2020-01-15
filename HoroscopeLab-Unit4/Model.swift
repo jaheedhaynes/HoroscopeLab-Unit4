@@ -21,17 +21,3 @@ struct Meta: Codable {
     let intensity: String
 }
 
-//---------------------------------------------------------------------------------------
-// MARK: User Preference/Settings (Persistance)
-
-struct UserPreferenceKey {
-    static let userName = "Jaheed"
-    static let sign = "Leo"
-    static let listName = "list"
-}
-
-class UserSettings {
-    private init() {
-    }
-    static let shared = UserSettings()
-}

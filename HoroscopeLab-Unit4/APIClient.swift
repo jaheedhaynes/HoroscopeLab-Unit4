@@ -19,6 +19,7 @@ struct HoroscopeAPI {
             return
         }
         
+        
         let request = URLRequest(url: url)
         
         NetworkHelper.shared.performDataTask(with: request) { (result) in

@@ -23,6 +23,8 @@ class HoroscopePickerVC: UIViewController {
     
     var horoscope: Horoscope?
     
+    let defaults = UserDefaults.standard
+    
    
     //---------------------------------------------------------------------------------------------------
 
@@ -59,11 +61,12 @@ class HoroscopePickerVC: UIViewController {
     
     
     
-    let defaults = UserDefaults.standard
+   
     
     
     
      func updateUI() {
+        
          defaults.set(textField.text, forKey: UserPreferenceKey.userName)
         
          defaults.set(horoscopeSignLabel.text, forKey: UserPreferenceKey.sign)
@@ -86,14 +89,14 @@ class HoroscopePickerVC: UIViewController {
          
      }
     
-    @IBAction func horoscopeButton(_ sender: UIButton) {
+    @IBAction func horoscopeButtonSegue(_ sender: UIButton) {
         self.performSegue(withIdentifier: "Segue", sender: nil)
         
     }
     
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-  //  }
+    }
     
     
 }
