@@ -22,9 +22,9 @@ struct Meta: Codable {
 }
 
 //---------------------------------------------------------------------------------------
-// MARK: User Settings (Persistance)
+// MARK: User Preference (Persistance)
 
-struct Keys {
+struct UserPreferenceKey {
     static let userName = "Jaheed"
     static let sign = "Leo"
     static let listName = "list"

@@ -51,7 +51,7 @@
                                 </constraints>
                                 <state key="normal" title="Save Settings"/>
                                 <connections>
-                                    <action selector="enter:" destination="M0d-5P-fjp" eventType="touchUpInside" id="42i-79-0XR"/>
+                                    <action selector="saveUserDataButton:" destination="M0d-5P-fjp" eventType="touchUpInside" id="42i-79-0XR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bes-pc-Rkw">
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xx-nf-xNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4600" y="-74.330357142857139"/>
+            <point key="canvasLocation" x="4806" y="-74"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oou-7K-v0J">

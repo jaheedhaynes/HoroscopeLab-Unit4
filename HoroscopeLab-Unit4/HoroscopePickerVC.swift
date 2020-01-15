@@ -22,8 +22,9 @@ class HoroscopePickerVC: UIViewController {
     private var list: String?
     
     var horoscope: Horoscope?
+    
    
-    //-----------------------------------------------------------
+    //---------------------------------------------------------------------------------------------------
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +34,21 @@ class HoroscopePickerVC: UIViewController {
         list = signs.first
         textField.delegate = self
         
-        retrieve()
+        saveData()
     }
     
-    //-----------------------------------------------------------
-    @IBAction func enter(_ sender: Any) {
+    //---------------------------------------------------------------------------------------------------
+
+    
+    @IBAction func saveUserDataButton(_ sender: Any) {
+        
         horoscopeSignLabel.text = "\(list ?? "leo")"
         
         let name = textField.text?.lowercased()
         
-        let message = "\(name ?? "")"
+        let welcomeMessage = "\(name ?? "Jaheed")"
         
-        nameLabel.text = message
+        nameLabel.text = welcomeMessage
         
         resignFirstResponder()
         
@@ -59,23 +63,23 @@ class HoroscopePickerVC: UIViewController {
     
     
      func updateUI() {
-         defaults.set(textField.text, forKey: Keys.userName)
-         defaults.set(horoscopeSignLabel.text, forKey: Keys.sign)
-         defaults.set(list, forKey: Keys.listName)
+         defaults.set(textField.text, forKey: UserPreferenceKey.userName)
+         defaults.set(horoscopeSignLabel.text, forKey: UserPreferenceKey.sign)
+         defaults.set(list, forKey: UserPreferenceKey.listName)
      }
     
     
 
-     func retrieve() {
+     func saveData() {
         
-         let name = defaults.value(forKey: Keys.userName) as? String ?? ""
+         let name = defaults.value(forKey: UserPreferenceKey.userName) as? String ?? ""
         nameLabel.text = "\(name)".uppercased()
          
-         let hSigns = defaults.value(forKey: Keys.sign) as? String ?? ""
-         horoscopeSignLabel.text = hSigns
+         let horoSigns = defaults.value(forKey: UserPreferenceKey.sign) as? String ?? ""
+         horoscopeSignLabel.text = horoSigns
          
-         let signList = defaults.value(forKey: Keys.listName) as? String ?? ""
-         list = signList
+         let signArr = defaults.value(forKey: UserPreferenceKey.listName) as? String ?? ""
+         list = signArr
          
      }
     
@@ -116,8 +120,6 @@ extension HoroscopePickerVC: UIPickerViewDelegate {
 
 extension HoroscopePickerVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-//        name = textField.text ?? "Jaheed"
         
         resignFirstResponder()
         

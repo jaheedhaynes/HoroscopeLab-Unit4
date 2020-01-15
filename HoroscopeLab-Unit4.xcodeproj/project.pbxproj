@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		303E7EFC23CED1CD00E86F36 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303E7EFB23CED1CC00E86F36 /* UserSettings.swift */; };
 		308A7C6723CD00B80013B56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A7C6623CD00B80013B56E /* AppDelegate.swift */; };
 		308A7C6923CD00B80013B56E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A7C6823CD00B80013B56E /* SceneDelegate.swift */; };
 		308A7C6E23CD00B80013B56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308A7C6C23CD00B80013B56E /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		303E7EFB23CED1CC00E86F36 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		308A7C6323CD00B80013B56E /* HoroscopeLab-Unit4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HoroscopeLab-Unit4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		308A7C6623CD00B80013B56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		308A7C6823CD00B80013B56E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 				308A7C6823CD00B80013B56E /* SceneDelegate.swift */,
 				308A7C8623CD0E2D0013B56E /* APIClient.swift */,
 				308A7C8423CD0AA20013B56E /* Model.swift */,
-				303E7EFB23CED1CC00E86F36 /* UserSettings.swift */,
 				308A7C7C23CD053D0013B56E /* HoroscopePickerVC.swift */,
 				3090634923CE0B00005B8096 /* HoroscopeDetailVC.swift */,
 				3090634723CD271D005B8096 /* showAlert.swift */,
@@ -170,7 +167,6 @@
 				308A7C6723CD00B80013B56E /* AppDelegate.swift in Sources */,
 				3090634823CD271D005B8096 /* showAlert.swift in Sources */,
 				308A7C6923CD00B80013B56E /* SceneDelegate.swift in Sources */,
-				303E7EFC23CED1CD00E86F36 /* UserSettings.swift in Sources */,
 				308A7C7D23CD053D0013B56E /* HoroscopePickerVC.swift in Sources */,
 				308A7C8723CD0E2D0013B56E /* APIClient.swift in Sources */,
 			);
