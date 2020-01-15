@@ -14,6 +14,7 @@ class HoroscopeDetailVC: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     func loadHoroscopeData(){
+        // getting the "title" to the detailVC
         HoroscopeAPI.fetchHoroscope(for: title ?? "") {[weak self] (result) in
             
             switch result {
@@ -26,7 +27,7 @@ class HoroscopeDetailVC: UIViewController {
             case .success(let sign):
                 DispatchQueue.main.async {
                     self?.textView.text = sign.horoscope
-                    //self?.signLabel.text = 
+                    // self?.signLabel.text =
                 }
             }
         }

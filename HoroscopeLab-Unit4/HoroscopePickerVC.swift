@@ -88,8 +88,12 @@ class HoroscopePickerVC: UIViewController {
     
     @IBAction func horoscopeButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "Segue", sender: nil)
+        
     }
     
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+  //  }
     
     
 }
