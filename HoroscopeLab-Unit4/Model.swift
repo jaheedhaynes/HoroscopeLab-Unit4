@@ -8,8 +8,7 @@
 
 import Foundation
 
-// MARK: - Element
-struct Element: Codable {
+struct Horoscope: Codable {
     let sunsign: String
     let date: String
     let horoscope: String
@@ -17,5 +16,7 @@ struct Element: Codable {
 }
 
 struct Meta: Codable {
-    let mood, keywords, intensity: String
+    let mood: String
+    let keywords: String
+    let intensity: String
 }

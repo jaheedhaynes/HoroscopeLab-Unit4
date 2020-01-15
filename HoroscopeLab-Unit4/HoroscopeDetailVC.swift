@@ -1,22 +1,22 @@
 //
-//  DetailViewController.swift
+//  HoroscopeDetailVC.swift
 //  HoroscopeLab-Unit4
 //
-//  Created by Jaheed Haynes on 1/13/20.
+//  Created by Jaheed Haynes on 1/14/20.
 //  Copyright © 2020 Jaheed Haynes. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    @IBOutlet weak var horoscopeSignLabel: UILabel!
-    
+class HoroscopeDetailVC: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-   
         
     }
     
+
+
 
 }
