@@ -15,12 +15,18 @@ class HoroscopeDetailVC: UIViewController {
     
     func loadHoroscopeData(){
         HoroscopeAPI.fetchHoroscope(for: title ?? "") {[weak self] (result) in
+            
             switch result {
             case.failure(let appError):
-                print(appError)
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "OK", message: "can't retrieve horoscope")
+                    print(appError)
+                }
+
             case .success(let sign):
                 DispatchQueue.main.async {
                     self?.textView.text = sign.horoscope
+                    //self?.signLabel.text = 
                 }
             }
         }

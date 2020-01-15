@@ -28,7 +28,8 @@ class HoroscopePickerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       pickerView.delegate = self
+        
+        pickerView.delegate = self
         pickerView.dataSource = self
         
         zodiacSign = signs.first
