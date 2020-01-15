@@ -19,7 +19,7 @@ class HoroscopePickerVC: UIViewController {
     
     let signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"].sorted()
     
-    private var list: String?
+    private var zodiacSign: String?
     
     var horoscope: Horoscope?
     
@@ -31,7 +31,7 @@ class HoroscopePickerVC: UIViewController {
        pickerView.delegate = self
         pickerView.dataSource = self
         
-        list = signs.first
+        zodiacSign = signs.first
         textField.delegate = self
         
         saveData()
@@ -42,13 +42,13 @@ class HoroscopePickerVC: UIViewController {
     
     @IBAction func saveUserDataButton(_ sender: Any) {
         
-        horoscopeSignLabel.text = "\(list ?? "leo")"
+        horoscopeSignLabel.text = "\(zodiacSign ?? "leo")"
         
-        let name = textField.text?.lowercased()
+        name = textField.text?.lowercased() ?? ""
         
-        let welcomeMessage = "\(name ?? "Jaheed")"
+        let topNameLabel = "\(name)"
         
-        nameLabel.text = welcomeMessage
+        nameLabel.text = topNameLabel
         
         resignFirstResponder()
         
@@ -64,8 +64,10 @@ class HoroscopePickerVC: UIViewController {
     
      func updateUI() {
          defaults.set(textField.text, forKey: UserPreferenceKey.userName)
+        
          defaults.set(horoscopeSignLabel.text, forKey: UserPreferenceKey.sign)
-         defaults.set(list, forKey: UserPreferenceKey.listName)
+        
+         defaults.set(zodiacSign, forKey: UserPreferenceKey.listName)
      }
     
     
@@ -79,7 +81,7 @@ class HoroscopePickerVC: UIViewController {
          horoscopeSignLabel.text = horoSigns
          
          let signArr = defaults.value(forKey: UserPreferenceKey.listName) as? String ?? ""
-         list = signArr
+         zodiacSign = signArr
          
      }
     
@@ -107,7 +109,7 @@ extension HoroscopePickerVC: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       list = signs[row]
+       zodiacSign = signs[row]
     }
  
 }
