@@ -8,18 +8,17 @@
 
 import Foundation
 
+/*
+struct Keys {
+    static let userName = "Jaheed"
+    static let sign = "Leo"
+    static let listName = "list"
+}
 
- struct Keys {
-       static let userName = "Jaheed"
-       static let sign = "Leo"
-       static let listName = "list"
-   }
-
- class UserSettings {
-   private init() {
-   }
-   
-static let shared = UserSettings()
-
- }
- 
+class UserSettings {
+    private init() {
+    }
+    
+    static let shared = UserSettings()
+}
+*/

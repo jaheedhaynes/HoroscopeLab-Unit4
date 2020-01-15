@@ -38,13 +38,13 @@ class HoroscopePickerVC: UIViewController {
     
     //-----------------------------------------------------------
     @IBAction func enter(_ sender: Any) {
-        horoscopeSignLabel.text = "Horoscope: \(list ?? "leo")"
+        horoscopeSignLabel.text = "\(list ?? "leo")"
         
         let name = textField.text?.lowercased()
         
-        let greeting = "Hello, \(name ?? "")!"
+        let message = "\(name ?? "")"
         
-        nameLabel.text = greeting
+        nameLabel.text = message
         
         resignFirstResponder()
         
@@ -67,8 +67,9 @@ class HoroscopePickerVC: UIViewController {
     
 
      func retrieve() {
+        
          let name = defaults.value(forKey: Keys.userName) as? String ?? ""
-         nameLabel.text = "Hello, \(name)"
+        nameLabel.text = "\(name)".uppercased()
          
          let hSigns = defaults.value(forKey: Keys.sign) as? String ?? ""
          horoscopeSignLabel.text = hSigns
@@ -77,6 +78,11 @@ class HoroscopePickerVC: UIViewController {
          list = signList
          
      }
+    
+    @IBAction func horoscopeButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "Segue", sender: nil)
+    }
+    
     
     
 }
@@ -113,7 +119,7 @@ extension HoroscopePickerVC: UITextFieldDelegate {
         
 //        name = textField.text ?? "Jaheed"
         
-        textField.resignFirstResponder()
+        resignFirstResponder()
         
         return true
         

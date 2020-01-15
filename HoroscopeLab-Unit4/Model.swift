@@ -20,3 +20,18 @@ struct Meta: Codable {
     let keywords: String
     let intensity: String
 }
+
+//---------------------------------------------------------------------------------------
+// MARK: User Settings (Persistance)
+
+struct Keys {
+    static let userName = "Jaheed"
+    static let sign = "Leo"
+    static let listName = "list"
+}
+
+class UserSettings {
+    private init() {
+    }
+    static let shared = UserSettings()
+}

@@ -10,11 +10,9 @@ import Foundation
 import NetworkHelper
 
 struct HoroscopeAPI {
-    static func fetchHoroscope(for horoscope: String, completion: @escaping (Result<[Horoscope], AppError>) -> ()) {
+    static func fetchHoroscope(for horoscope: String, completion: @escaping (Result<Horoscope, AppError>) -> ()) {
         
-//        let horoscope = horoscope.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "leo"
-        
-        let endpointUrlString = "http://sandipbgt.com/theastrologer/api/all/today/"
+        let endpointUrlString = "http://sandipbgt.com/theastrologer/api/horoscope/all/today"
         
         guard let url = URL(string: endpointUrlString) else {
             completion(.failure(.badURL(endpointUrlString)))
@@ -31,7 +29,7 @@ struct HoroscopeAPI {
                 
             case .success(let data):
                 do {
-                    let sign = try JSONDecoder().decode([Horoscope].self, from: data)
+                    let sign = try JSONDecoder().decode(Horoscope.self, from: data)
                     completion(.success(sign))
                 } catch {
                     completion(.failure(.decodingError(error)))
