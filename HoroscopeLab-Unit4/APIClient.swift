@@ -12,7 +12,7 @@ import NetworkHelper
 struct HoroscopeAPI {
     static func fetchHoroscope(for horoscope: String, completion: @escaping (Result<Horoscope, AppError>) -> ()) {
         
-        let endpointUrlString = "http://sandipbgt.com/theastrologer/api/horoscope/aries/today"
+        let endpointUrlString = "http://sandipbgt.com/theastrologer/api/horoscope/\(horoscope.lowercased())/today"
         
         guard let url = URL(string: endpointUrlString) else {
             completion(.failure(.badURL(endpointUrlString)))

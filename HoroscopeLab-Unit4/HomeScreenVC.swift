@@ -89,8 +89,8 @@ class HomeScreenVC: UIViewController {
     
     
     func loadHoroscopeData(){
-        // getting the "title" to the detailVC
-        HoroscopeAPI.fetchHoroscope(for: title ?? "") {[weak self] (result) in
+        
+        HoroscopeAPI.fetchHoroscope(for: zodiacSign ?? "") {[weak self] (result) in
             
             switch result {
             case.failure(let appError):
@@ -102,7 +102,7 @@ class HomeScreenVC: UIViewController {
             case .success(let sign):
                 DispatchQueue.main.async {
                     self?.textView.text = sign.horoscope
-                    // self?.signLabel.text =
+                    
                 }
             }
         }
@@ -126,6 +126,8 @@ extension HomeScreenVC: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         zodiacSign = signs[row]
+        loadHoroscopeData()
+
     }
     
 }
