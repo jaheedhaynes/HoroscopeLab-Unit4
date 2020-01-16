@@ -8,17 +8,9 @@
 
 import Foundation
 
-// MARK: User Preference/Settings (Persistance)
-
 struct UserPreferenceKey {
     static let userName = "Jaheed"
     static let sign = "Leo"
     static let listName = "list"
 }
 
-class UserPreference {
-    private init() {
-    }
-    static let shared = UserPreference()
-    
-}
