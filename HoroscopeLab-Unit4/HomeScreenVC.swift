@@ -85,6 +85,8 @@ class HomeScreenVC: UIViewController {
         let signArr = defaults.object(forKey: UserPreferenceKey.listName) as? String ?? ""
         zodiacSign = signArr
         
+    
+        
     }
     
     
@@ -127,6 +129,7 @@ extension HomeScreenVC: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         zodiacSign = signs[row]
         loadHoroscopeData()
+        defaults.object(forKey: zodiacSign ?? "leo")
 
     }
     
