@@ -8,7 +8,6 @@
 
 import Foundation
 
-//---------------------------------------------------------------------------------------
 // MARK: User Preference/Settings (Persistance)
 
 struct UserPreferenceKey {
@@ -22,8 +21,4 @@ class UserPreference {
     }
     static let shared = UserPreference()
     
-    func updateHoroscope(with unit: Horoscope){
-        UserDefaults.standard.set(Horoscope.self, forKey: UserPreferenceKey.sign)
-        
-    }
 }

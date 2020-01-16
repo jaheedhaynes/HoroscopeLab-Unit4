@@ -12,7 +12,7 @@
 		308A7C6E23CD00B80013B56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308A7C6C23CD00B80013B56E /* Main.storyboard */; };
 		308A7C7023CD00BA0013B56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308A7C6F23CD00BA0013B56E /* Assets.xcassets */; };
 		308A7C7323CD00BA0013B56E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308A7C7123CD00BA0013B56E /* LaunchScreen.storyboard */; };
-		308A7C7D23CD053D0013B56E /* HoroscopePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A7C7C23CD053D0013B56E /* HoroscopePickerVC.swift */; };
+		308A7C7D23CD053D0013B56E /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A7C7C23CD053D0013B56E /* HomeScreenVC.swift */; };
 		308A7C8023CD05F20013B56E /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 308A7C7F23CD05F20013B56E /* NetworkHelper */; };
 		308A7C8323CD06110013B56E /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = 308A7C8223CD06110013B56E /* DataPersistence */; };
 		308A7C8523CD0AA20013B56E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A7C8423CD0AA20013B56E /* Model.swift */; };
@@ -29,7 +29,7 @@
 		308A7C6F23CD00BA0013B56E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		308A7C7223CD00BA0013B56E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		308A7C7423CD00BA0013B56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		308A7C7C23CD053D0013B56E /* HoroscopePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopePickerVC.swift; sourceTree = "<group>"; };
+		308A7C7C23CD053D0013B56E /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		308A7C8423CD0AA20013B56E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		308A7C8623CD0E2D0013B56E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3090634723CD271D005B8096 /* showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAlert.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 				308A7C8423CD0AA20013B56E /* Model.swift */,
 				308A7C8623CD0E2D0013B56E /* APIClient.swift */,
 				30B0867B23CFBA010086330C /* UserPreference.swift */,
-				308A7C7C23CD053D0013B56E /* HoroscopePickerVC.swift */,
+				308A7C7C23CD053D0013B56E /* HomeScreenVC.swift */,
 				3090634723CD271D005B8096 /* showAlert.swift */,
 				308A7C6C23CD00B80013B56E /* Main.storyboard */,
 				308A7C6F23CD00BA0013B56E /* Assets.xcassets */,
@@ -167,7 +167,7 @@
 				3090634823CD271D005B8096 /* showAlert.swift in Sources */,
 				308A7C6923CD00B80013B56E /* SceneDelegate.swift in Sources */,
 				30B0867C23CFBA010086330C /* UserPreference.swift in Sources */,
-				308A7C7D23CD053D0013B56E /* HoroscopePickerVC.swift in Sources */,
+				308A7C7D23CD053D0013B56E /* HomeScreenVC.swift in Sources */,
 				308A7C8723CD0E2D0013B56E /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

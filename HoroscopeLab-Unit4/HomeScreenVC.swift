@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HoroscopePickerVC: UIViewController {
+class HomeScreenVC: UIViewController {
     
     @IBOutlet weak var horoscopeSignLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -26,9 +26,9 @@ class HoroscopePickerVC: UIViewController {
     
     let defaults = UserDefaults.standard
     
-   
+    
     //---------------------------------------------------------------------------------------------------
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +44,7 @@ class HoroscopePickerVC: UIViewController {
     }
     
     //---------------------------------------------------------------------------------------------------
-
+    
     
     @IBAction func saveUserDataButton(_ sender: Any) {
         
@@ -63,34 +63,30 @@ class HoroscopePickerVC: UIViewController {
     }
     
     
-    
-   
-    
-    
-    
-     func updateUI() {
+    func updateUI() {
         
-         defaults.set(textField.text, forKey: UserPreferenceKey.userName)
+        defaults.set(textField.text, forKey: UserPreferenceKey.userName)
         
-         defaults.set(horoscopeSignLabel.text, forKey: UserPreferenceKey.sign)
+        defaults.set(horoscopeSignLabel.text, forKey: UserPreferenceKey.sign)
         
-         defaults.set(zodiacSign, forKey: UserPreferenceKey.listName)
-     }
+        defaults.set(zodiacSign, forKey: UserPreferenceKey.listName)
+    }
     
     
-
-     func saveData() {
+    
+    func saveData() {
         
-         let name = defaults.value(forKey: UserPreferenceKey.userName) as? String ?? ""
+        let name = defaults.object(forKey: UserPreferenceKey.userName) as? String ?? ""
         nameLabel.text = "\(name)".uppercased()
-         
-         let horoSigns = defaults.value(forKey: UserPreferenceKey.sign) as? String ?? ""
-         horoscopeSignLabel.text = horoSigns
-         
-         let signArr = defaults.value(forKey: UserPreferenceKey.listName) as? String ?? ""
-         zodiacSign = signArr
-         
-     }
+        
+        let horoSigns = defaults.object(forKey: UserPreferenceKey.sign) as? String ?? ""
+        horoscopeSignLabel.text = horoSigns
+        
+        let signArr = defaults.object(forKey: UserPreferenceKey.listName) as? String ?? ""
+        zodiacSign = signArr
+        
+    }
+    
     
     func loadHoroscopeData(){
         // getting the "title" to the detailVC
@@ -102,7 +98,7 @@ class HoroscopePickerVC: UIViewController {
                     self?.showAlert(title: "OK", message: "can't retrieve horoscope")
                     print(appError)
                 }
-
+                
             case .success(let sign):
                 DispatchQueue.main.async {
                     self?.textView.text = sign.horoscope
@@ -111,17 +107,6 @@ class HoroscopePickerVC: UIViewController {
             }
         }
     }
-    
-    @IBAction func horoscopeButtonSegue(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "Segue", sender: nil)
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
-    
 }
 
 
@@ -129,8 +114,8 @@ class HoroscopePickerVC: UIViewController {
 //-----------------------------------------------------------
 // MARK: EXTENSIONS
 
-extension HoroscopePickerVC: UIPickerViewDataSource {
-
+extension HomeScreenVC: UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -140,18 +125,18 @@ extension HoroscopePickerVC: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       zodiacSign = signs[row]
+        zodiacSign = signs[row]
     }
- 
+    
 }
 
-extension HoroscopePickerVC: UIPickerViewDelegate {
-      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-          return signs[row]
-      }
+extension HomeScreenVC: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return signs[row]
+    }
 }
 
-extension HoroscopePickerVC: UITextFieldDelegate {
+extension HomeScreenVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         resignFirstResponder()
