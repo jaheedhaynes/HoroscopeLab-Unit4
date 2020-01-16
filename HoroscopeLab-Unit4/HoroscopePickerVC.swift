@@ -14,12 +14,13 @@ class HoroscopePickerVC: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
     
     var name = ""
     
     let signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"].sorted()
     
-    private var zodiacSign: String?
+    var zodiacSign: String?
     
     var horoscope: Horoscope?
     
@@ -36,6 +37,8 @@ class HoroscopePickerVC: UIViewController {
         
         zodiacSign = signs.first
         textField.delegate = self
+        
+        loadHoroscopeData()
         
         saveData()
     }
@@ -88,6 +91,26 @@ class HoroscopePickerVC: UIViewController {
          zodiacSign = signArr
          
      }
+    
+    func loadHoroscopeData(){
+        // getting the "title" to the detailVC
+        HoroscopeAPI.fetchHoroscope(for: title ?? "") {[weak self] (result) in
+            
+            switch result {
+            case.failure(let appError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "OK", message: "can't retrieve horoscope")
+                    print(appError)
+                }
+
+            case .success(let sign):
+                DispatchQueue.main.async {
+                    self?.textView.text = sign.horoscope
+                    // self?.signLabel.text =
+                }
+            }
+        }
+    }
     
     @IBAction func horoscopeButtonSegue(_ sender: UIButton) {
         self.performSegue(withIdentifier: "Segue", sender: nil)
